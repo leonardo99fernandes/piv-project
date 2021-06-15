@@ -16,7 +16,6 @@ class Mouse_Singleton {
             this._buttonStates[i] = new ButtonState();
         }
         this._position = Vector2.zero;
-        console.log(this._position)
         document.addEventListener('mousemove', (event) => this.handleMouseMove(event));
         document.addEventListener('mousedown', (event) => this.handleMouseDown(event));
         document.addEventListener('mouseup', (event) => this.handleMouseUp(event));

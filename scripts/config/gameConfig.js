@@ -3,7 +3,7 @@ export const GameConfig = {
     soundOn: true,
     timeoutToHideStickAfterShot: 500,
     timeoutToHideBallAfterPocket: 100,
-    loadingScreenTimeout: 5000,
+    loadingScreenTimeout: 250,
     loadingScreenImagePosition: { x: 450, y: 112.5 },
     timeoutToLoadSubMenu: 100,
     labels: {

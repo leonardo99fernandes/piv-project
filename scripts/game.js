@@ -11,12 +11,9 @@ const sprites = GameConfig.sprites;
 const inputConfig = GameConfig.input;
 
 export class Game {
-    _menuActionsMap;
-    _previousMenus = [];
-    //_menu: Menu = new Menu();
     _poolGame;
     _isLoading = false;
-    _inGame;
+    _inGame = true;
 
     //------Methods------//
 
@@ -57,11 +54,7 @@ export class Game {
     }
 
     draw() {
-        /* if (this._isLoading) return;
-        if(AI.finishedSession){
-            Canvas2D.clear();
-            this._menu.active ? this._menu.draw() : this._poolGame.draw();
-        } */
+        Canvas2D.clear();
         this._poolGame.draw();
     }
 
@@ -74,30 +67,16 @@ export class Game {
     }
 
     //------Methods------//
-
     async init() {
+        console.log("load")
         await Assets.loadGameAssets();
-        /* this.initMenuActions();
-        this.initMainMenu();
-        this._menu.active = true; */
+        console.log("din")
         this._poolGame = new GameWorld();
         this.gameLoop();
     }
 
-    /* async start() {
-        await Assets.loadGameAssets();
-        GameConfig.ai.on = false;
-        this._inGame = true;
-        this._poolGame = new GameWorld();
-        this.draw()
-        console.log(this._poolGame)
-        this._poolGame.initMatch();
-        this.gameLoop();
-    } */
-
     start() {
         this.displayLoadingScreen().then(() => {
-            this._menu.active = false;
             this._inGame = true;
             this._poolGame = new GameWorld();
             this._poolGame.initMatch();

@@ -86,7 +86,6 @@ class Canvas2D_Singleton {
         this._context.scale(this._scale.x, this._scale.y);
         this._context.translate(position.x, position.y);
         this._context.rotate(rotation);
-        console.log(sprite)
         this._context.drawImage(sprite, 0, 0, sprite.width, sprite.height, -origin.x, -origin.y, sprite.width, sprite.height);
         this._context.restore();
     }

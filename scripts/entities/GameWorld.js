@@ -238,7 +238,6 @@ export class GameWorld {
     }
 
     handleBallsInPockets() {
-        console.log(this._balls)
         this._balls.forEach((ball) => {
             this.resolveBallInPocket(ball);
             if (!ball.visible && !this._turnState.pocketedBalls.includes(ball)) {
